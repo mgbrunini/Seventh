@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00eaff",
+            "accent-magenta": "#ff00ff",
+            "background-light": "#f5f8f8",
+            "background-dark": "#0f2223",
+            "surface-dark": "#173336",
+            "border-dark": "#20474b",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+        },
+      },
+    }
+  </script>
+  <title>Seventh - Trampoline &amp; Laser Tag Park</title>
+</head>
+
+<body
+  class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+  <div class="relative flex h-auto min-screen w-full flex-col">
+    <!-- Navigation -->
+    <header
+      class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md border-b border-border-dark px-4 md:px-20 py-4">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="size-8 text-primary">
+            <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor"
+                fill-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h1 class="text-2xl font-bold tracking-tight text-white uppercase italic">Seventh</h1>
+        </div>
+        <nav class="hidden md:flex items-center gap-10">
+          <a class="text-sm font-medium hover:text-primary transition-colors text-slate-300" href="#">Atracciones</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors text-slate-300" href="#">Precios</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors text-slate-300" href="#">Cumpleaños</a>
+          <a class="text-sm font-medium hover:text-primary transition-colors text-slate-300" href="#">Contacto</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <button
+            class="bg-primary hover:bg-primary/80 text-background-dark px-6 py-2 rounded font-bold text-sm tracking-wider transition-all shadow-[0_0_15px_rgba(0,234,255,0.4)]">
+            RESERVAR AHORA
+          </button>
+          <button class="md:hidden text-white">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="flex-1">
+      <!-- Hero Section -->
+      <section class="relative min-h-[85vh] flex items-center justify-center px-4 overflow-hidden">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-background-dark/40 via-background-dark/80 to-background-dark z-10">
+        </div>
+        <div class="absolute inset-0 bg-center bg-cover scale-105"
+          data-alt="Interior of a dark trampoline park with neon lights"
+          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVBh4mBzO-MzD8j-nz7sr226925qRP1eLEUzbvnZoVaAWqmebNwWr0UiTnV6C7qM1wXibui31R9DBXBiMnRrWDeOKs9W6hMajCo_pisS2XjYLkYC1z0w-Daiv0yN0nIhx53IuFlx06h1H-yLicfWDVn2gIMjZcjBwwXF_VJ619ZOzmYcA7vwrT4E6l8dNsV7t_4pKSRKueZKQu1vawoGQQJb1fcqI0KgWjJu8aFPI7qWDuU7qNBdiswfFidggQs43GM3bxRw6lZKPg');">
+        </div>
+        <div class="relative z-20 max-w-4xl text-center flex flex-col items-center gap-8">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+            </span>
+            Adrenalina Pura al 100%
+          </div>
+          <h2 class="text-5xl md:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase italic">
+            ¡RESERVÁ TU <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent-magenta">LUGAR</span> EN EL
+            PARQUE!
+          </h2>
+          <p class="max-w-2xl text-lg md:text-xl text-slate-300 font-light">
+            Viví la experiencia definitiva en nuestro parque de trampolines y arena de laser tag con tecnología de punta
+            y efectos de luces de neón.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+            <button
+              class="flex-1 min-w-[240px] bg-primary text-background-dark py-5 px-10 rounded font-black text-xl tracking-tighter hover:scale-105 transition-transform shadow-[0_0_30px_rgba(0,234,255,0.5)] uppercase">
+              ¡RESERVÁ YA!
+            </button>
+          </div>
+        </div>
+        <!-- Floating Stats Widget -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 w-full max-w-sm px-4">
+          <div class="bg-surface-dark/90 backdrop-blur-xl border border-white/10 p-6 rounded-xl shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <p class="text-primary text-[10px] font-bold tracking-[0.2em] uppercase mb-1">Estado en Tiempo Real</p>
+                <h3 class="text-white text-lg font-bold">Disponibilidad en Vivo</h3>
+              </div>
+              <span class="material-symbols-outlined text-primary text-3xl">sensors</span>
+            </div>
+            <div class="space-y-3">
+              <div class="flex justify-between items-end">
+                <span class="text-slate-400 text-xs font-medium">Sectores disponibles hoy</span>
+                <span class="text-white font-bold text-xl tracking-tighter">85%</span>
+              </div>
+              <div class="h-2 w-full bg-border-dark rounded-full overflow-hidden">
+                <div class="h-full bg-primary shadow-[0_0_10px_rgba(0,234,255,1)]" style="width: 85%;"></div>
+              </div>
+              <div class="flex items-center gap-2 text-primary/80 text-[11px] font-medium">
+                <span class="material-symbols-outlined text-sm">bolt</span>
+                ¡Aprovechá, quedan los últimos lugares para hoy!
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Experience Sections -->
+      <section class="py-24 px-4 bg-background-dark">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+              <h2 class="text-primary text-sm font-bold tracking-[0.3em] uppercase">Nuestras Atracciones</h2>
+              <h3 class="text-4xl md:text-5xl font-bold text-white leading-tight">MÁS QUE SALTAR,<br /><span
+                  class="text-accent-magenta">ES VOLAR.</span></h3>
+              <p class="text-slate-400 text-lg">
+                Descubrí zonas de salto libre, dodgeball extremo, y nuestra arena de laser tag ambientada en un futuro
+                distópico con obstáculos inteligentes.
+              </p>
+              <ul class="space-y-4 pt-4">
+                <li class="flex items-center gap-4 text-slate-200">
+                  <span class="material-symbols-outlined text-primary">check_circle</span>
+                  <span>Trampolines Olímpicos de alta respuesta</span>
+                </li>
+                <li class="flex items-center gap-4 text-slate-200">
+                  <span class="material-symbols-outlined text-primary">check_circle</span>
+                  <span>Laser Tag con equipamiento Pro-Grip</span>
+                </li>
+                <li class="flex items-center gap-4 text-slate-200">
+                  <span class="material-symbols-outlined text-primary">check_circle</span>
+                  <span>Zona de impacto con espuma de alta densidad</span>
+                </li>
+              </ul>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="h-80 rounded-lg bg-cover bg-center mt-12 border border-white/5"
+                data-alt="Action shot of someone jumping on a trampoline"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJ1fzOBC9VuhBqL9q8FCNxSvyFV2PCBWZKsgG3fJAyNL712iM_wcC3U963BOPA03TMiw9CttthoFimX3zmdXsqO7MLTBmfegAp_UJv9eWHsrLJxGagbYDN5NlrwCSmVXlXiQojKydqosRrsRig5Hh6G8WzS6AtMQJ25616rW75WvX-AqHB_Hbmv4ZNFs4xweOrS84EoHX_Yc_poQ3olsich8bW_R7OH6uUBNdDB1vi1muDjetUO7qpWoY9-h4ijBrnFdFH0FfrKJMg');">
+              </div>
+              <div class="h-80 rounded-lg bg-cover bg-center border border-white/5"
+                data-alt="Futuristic laser tag arena with blue and red lights"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB_x6wvCAD-QVm2PVQQvqDRa38DfLNHRbDBjOjBEWVl6wKGfUkOueRvn7TD03QVBa6kZQY6tcN0W8MRwdffvkyFirc-vbRBdXD3nwkRC34UAc74Nt1HDLczJvLw1sZO05UX3-qH9052uD7Mm2tBBJ7VSiwMoRrebp5WY7Lr3Zb8roRmpF2O9mCRA2OvLDCO3P_IwDLIlpR2lwU50VapovYf23k9P0pPweGKc9BgPrUwjpGXcOjoUyg2497FHvtA2lL3PrKHRHvQL-29');">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Birthday Section -->
+      <section class="py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+          <div class="relative rounded-2xl overflow-hidden bg-surface-dark border border-white/10 group">
+            <div
+              class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,#ff00ff,transparent_70%)]">
+            </div>
+            <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between p-10 md:p-16 gap-10">
+              <div class="text-center lg:text-left space-y-4 max-w-xl">
+                <h2 class="text-5xl md:text-7xl font-black text-white italic uppercase leading-none tracking-tighter">
+                  ¡FESTEJÁ CON <span class="text-accent-magenta italic">NOSOTROS!</span>
+                </h2>
+                <p class="text-slate-300 text-lg">
+                  Hacé que tu cumpleaños sea inolvidable. Paquetes exclusivos, sala privada de festejos y acceso total a
+                  todas las zonas.
+                </p>
+              </div>
+              <div class="flex flex-col gap-4 w-full lg:w-auto">
+                <button
+                  class="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20bd5c] text-white px-8 py-5 rounded-lg font-bold text-xl transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)]">
+                  <svg class="size-8" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z">
+                    </path>
+                  </svg>
+                  CHATEÁ CON UN ASESOR
+                </button>
+                <button
+                  class="flex items-center justify-center gap-2 border border-primary/50 text-primary px-8 py-5 rounded-lg font-bold text-xl hover:bg-primary/10 transition-colors">
+                  VER CATÁLOGO DE COMBOS
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Map/Location -->
+      <section class="py-20 bg-background-dark/50">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+          <div
+            class="rounded-xl overflow-hidden h-[400px] border border-border-dark grayscale hover:grayscale-0 transition-all duration-700"
+            data-location="Buenos Aires, Argentina" style="">
+            <img class="w-full h-full object-cover" data-alt="Stylized map showing park location"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmrzaUe80S5ZkAPKBN_HLnNCZAw6kN0Vko4eBjWGm1eI9elpu1AOdpbOh916xqMLp-gknZ1pSugbGTfIPPAbkpZDAZEFnPf8_kGx70OHVwxd7zs4-xD89rnAt-MYlY6LVvA5aXWzlPgMNjM2gWnSNHfWqw-tHOse64at2xDDuXNBtmmIdzn0Tdc_0QohsxetsDGgH2ka2GSaJstckKFeZkJIi9OvMZTtFpumhok11jYbAkiBR1rlOlOmBxeGP73_HFUjmdkmXca_M5" />
+          </div>
+          <div class="space-y-6">
+            <h2 class="text-3xl font-bold text-white">UBICACIÓN ESTRATÉGICA</h2>
+            <div class="space-y-4">
+              <div class="flex gap-4">
+                <span class="material-symbols-outlined text-primary">location_on</span>
+                <div>
+                  <p class="font-bold text-slate-100">Visitanos en:</p>
+                  <p class="text-slate-400">Av. Las Luces 1234, CABA</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="material-symbols-outlined text-primary">schedule</span>
+                <div>
+                  <p class="font-bold text-slate-100">Horarios:</p>
+                  <p class="text-slate-400">Mar a Jue: 14:00 - 21:00</p>
+                  <p class="text-slate-400">Vie a Dom: 11:00 - 00:00</p>
+                </div>
+              </div>
+            </div>
+            <button
+              class="bg-surface-dark border border-border-dark text-white px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-border-dark transition-colors">
+              <span class="material-symbols-outlined">directions</span>
+              CÓMO LLEGAR
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-background-dark border-t border-border-dark py-12 px-4">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center gap-3">
+          <div class="size-6 text-primary">
+            <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor"
+                fill-rule="evenodd"></path>
+            </svg>
+          </div>
+          <h2 class="text-xl font-bold text-white uppercase italic tracking-tighter">Seventh</h2>
+        </div>
+        <div class="flex gap-6">
+          <a class="text-slate-400 hover:text-primary transition-colors" href="#">Instagram</a>
+          <a class="text-slate-400 hover:text-primary transition-colors" href="#">Facebook</a>
+          <a class="text-slate-400 hover:text-primary transition-colors" href="#">TikTok</a>
+        </div>
+        <p class="text-slate-500 text-sm">
+          © 2024 Seventh Trampoline Park. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
