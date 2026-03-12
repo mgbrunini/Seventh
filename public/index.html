@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="es">
 
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <!-- Tailwind CSS con plugins -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Fuentes e iconos -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
     rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
@@ -13,6 +14,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
+  <!-- Configuración de Tailwind -->
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -34,11 +36,33 @@
       },
     }
   </script>
-  <title>Seventh - Trampoline &amp; Laser Tag Park</title>
+  <!-- Import Map para Firebase Modular SDK v10 -->
+  <script type="importmap">
+    {
+      "imports": {
+        "firebase/app": "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js",
+        "firebase/firestore": "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js"
+      }
+    }
+  </script>
+  <title>Seventh - Trampoline & Laser Tag Park</title>
 </head>
 
 <body
   class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+
+  <!-- CONTENEDOR DE BOTONES FLOTANTES (columna, esquina superior derecha) -->
+  <div class="fixed top-4 right-4 z-[9999] flex flex-col gap-3">
+    <button id="btnConfig"
+      class="bg-[#00eaff] hover:bg-[#00eaff]/80 text-background-dark font-bold py-3 px-6 rounded-lg shadow-lg transition-all">
+      PASO 1: SETEAR CONFIGURACIÓN MAESTRA
+    </button>
+    <button id="btnGenerarBloques"
+      class="bg-[#00eaff] hover:bg-[#00eaff]/80 text-background-dark font-bold py-3 px-6 rounded-lg shadow-lg transition-all">
+      GENERAR PRÓXIMOS 7 DÍAS
+    </button>
+  </div>
+
   <div class="relative flex h-auto min-screen w-full flex-col">
     <!-- Navigation -->
     <header
@@ -70,6 +94,7 @@
         </div>
       </div>
     </header>
+
     <main class="flex-1">
       <!-- Hero Section -->
       <section class="relative min-h-[85vh] flex items-center justify-center px-4 overflow-hidden">
@@ -80,6 +105,7 @@
           data-alt="Interior of a dark trampoline park with neon lights"
           style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVBh4mBzO-MzD8j-nz7sr226925qRP1eLEUzbvnZoVaAWqmebNwWr0UiTnV6C7qM1wXibui31R9DBXBiMnRrWDeOKs9W6hMajCo_pisS2XjYLkYC1z0w-Daiv0yN0nIhx53IuFlx06h1H-yLicfWDVn2gIMjZcjBwwXF_VJ619ZOzmYcA7vwrT4E6l8dNsV7t_4pKSRKueZKQu1vawoGQQJb1fcqI0KgWjJu8aFPI7qWDuU7qNBdiswfFidggQs43GM3bxRw6lZKPg');">
         </div>
+
         <div class="relative z-20 max-w-4xl text-center flex flex-col items-center gap-8">
           <div
             class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase">
@@ -105,7 +131,8 @@
             </button>
           </div>
         </div>
-        <!-- Floating Stats Widget -->
+
+        <!-- Widget de estadísticas flotante -->
         <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 w-full max-w-sm px-4">
           <div class="bg-surface-dark/90 backdrop-blur-xl border border-white/10 p-6 rounded-xl shadow-2xl">
             <div class="flex items-center justify-between mb-4">
@@ -131,6 +158,7 @@
           </div>
         </div>
       </section>
+
       <!-- Experience Sections -->
       <section class="py-24 px-4 bg-background-dark">
         <div class="max-w-7xl mx-auto">
@@ -171,6 +199,7 @@
           </div>
         </div>
       </section>
+
       <!-- Birthday Section -->
       <section class="py-12 px-4">
         <div class="max-w-7xl mx-auto">
@@ -207,12 +236,13 @@
           </div>
         </div>
       </section>
+
       <!-- Map/Location -->
       <section class="py-20 bg-background-dark/50">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
           <div
             class="rounded-xl overflow-hidden h-[400px] border border-border-dark grayscale hover:grayscale-0 transition-all duration-700"
-            data-location="Buenos Aires, Argentina" style="">
+            data-location="Buenos Aires, Argentina">
             <img class="w-full h-full object-cover" data-alt="Stylized map showing park location"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmrzaUe80S5ZkAPKBN_HLnNCZAw6kN0Vko4eBjWGm1eI9elpu1AOdpbOh916xqMLp-gknZ1pSugbGTfIPPAbkpZDAZEFnPf8_kGx70OHVwxd7zs4-xD89rnAt-MYlY6LVvA5aXWzlPgMNjM2gWnSNHfWqw-tHOse64at2xDDuXNBtmmIdzn0Tdc_0QohsxetsDGgH2ka2GSaJstckKFeZkJIi9OvMZTtFpumhok11jYbAkiBR1rlOlOmBxeGP73_HFUjmdkmXca_M5" />
           </div>
@@ -244,6 +274,7 @@
         </div>
       </section>
     </main>
+
     <!-- Footer -->
     <footer class="bg-background-dark border-t border-border-dark py-12 px-4">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
@@ -267,7 +298,142 @@
       </div>
     </footer>
   </div>
-  <script src="app.js"></script>
+
+  <!-- SCRIPT PRINCIPAL CON FIREBASE (type="module") -->
+  <script type="module">
+    // Importar Firebase modular v10
+    import { initializeApp } from 'firebase/app';
+    import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
+
+    // Credenciales de Firebase (ya reemplazadas)
+    const firebaseConfig = {
+      apiKey: "AIzaSyAl6ZdVCa8Ap72iDILZKIFPCy27OYbkj5o",
+      authDomain: "parque-dinamico.firebaseapp.com",
+      projectId: "parque-dinamico",
+      storageBucket: "parque-dinamico.firebasestorage.app",
+      messagingSenderId: "456982047866",
+      appId: "1:456982047866:web:da4a0caaaa87d5dbd11fc3",
+      measurementId: "G-9CB6FV4X7V"
+    };
+
+    // Inicializar Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // ------------------------------------------------------------
+    // Función 1: Inicializar configuración maestra
+    // ------------------------------------------------------------
+    window.inicializarConfiguracion = async function () {
+      const btn = document.getElementById('btnConfig');
+      const textoOriginal = btn.innerText;
+      btn.innerText = '⏳ GUARDANDO...';
+      btn.disabled = true;
+
+      try {
+        const configRef = doc(db, 'config', 'settings');
+        const configSnap = await getDoc(configRef);
+
+        if (configSnap.exists()) {
+          alert('⚠️ La configuración ya existe. No se realizaron cambios.');
+          return;
+        }
+
+        const configData = {
+          capacidad_parque: 80,
+          capacidad_laser: 20,
+          precio_base_parque: 5000,
+          precio_base_laser: 3000,
+          duracion_min_parque: 60,
+          duracion_min_laser: 30,
+          intervalo_minutos: 30,
+          actualizado: new Date().toISOString()
+        };
+
+        await setDoc(configRef, configData);
+        alert('✅ Configuración guardada correctamente en Firestore.');
+      } catch (error) {
+        console.error(error);
+        alert('❌ Error al guardar la configuración. Revisa la consola.');
+      } finally {
+        btn.innerText = textoOriginal;
+        btn.disabled = false;
+      }
+    };
+
+    // ------------------------------------------------------------
+    // Función 2: Generar bloques para los próximos 7 días
+    // ------------------------------------------------------------
+    window.generarProximos7Dias = async function () {
+      const btn = document.getElementById('btnGenerarBloques');
+      const textoOriginal = btn.innerText;
+      btn.innerText = '⏳ GENERANDO 7 DÍAS...';
+      btn.disabled = true;
+
+      try {
+        // Verificar que exista la configuración
+        const configRef = doc(db, 'config', 'settings');
+        const configSnap = await getDoc(configRef);
+        if (!configSnap.exists()) {
+          alert('❌ Primero debes ejecutar el PASO 1 para crear la configuración.');
+          return;
+        }
+
+        let totalCreados = 0;
+        const hoy = new Date();
+
+        // Recorrer 7 días (día 0 = hoy, día 6 = hoy + 6)
+        for (let i = 0; i < 7; i++) {
+          const fechaActual = new Date(hoy);
+          fechaActual.setDate(hoy.getDate() + i);
+          const year = fechaActual.getFullYear();
+          const month = String(fechaActual.getMonth() + 1).padStart(2, '0');
+          const day = String(fechaActual.getDate()).padStart(2, '0');
+          const fechaStr = `${year}-${month}-${day}`;
+
+          // Generar horarios desde 10:00 hasta 21:30 (24 bloques por día)
+          const horarios = [];
+          let hora = 10 * 60; // minutos desde 00:00
+          const cierre = 22 * 60; // 22:00
+          while (hora < cierre) {
+            const hh = Math.floor(hora / 60).toString().padStart(2, '0');
+            const mm = (hora % 60).toString().padStart(2, '0');
+            horarios.push(`${hh}:${mm}`);
+            hora += 30;
+          }
+
+          // Crear cada bloque si no existe
+          for (const hora of horarios) {
+            const id = `${fechaStr}_${hora}`;
+            const turnoRef = doc(db, 'turnos', id);
+            const turnoSnap = await getDoc(turnoRef);
+            if (!turnoSnap.exists()) {
+              await setDoc(turnoRef, {
+                capacidad_parque_disponible: 80,
+                capacidad_laser_disponible: 20,
+                fecha: fechaStr,
+                hora: hora,
+                activo: true,
+                creado: new Date().toISOString()
+              });
+              totalCreados++;
+            }
+          }
+        }
+
+        alert(`✅ Se crearon ${totalCreados} bloques para los próximos 7 días.`);
+      } catch (error) {
+        console.error(error);
+        alert('❌ Error al generar los bloques. Revisa la consola.');
+      } finally {
+        btn.innerText = textoOriginal;
+        btn.disabled = false;
+      }
+    };
+
+    // Asignar eventos a los botones
+    document.getElementById('btnConfig').addEventListener('click', window.inicializarConfiguracion);
+    document.getElementById('btnGenerarBloques').addEventListener('click', window.generarProximos7Dias);
+  </script>
 </body>
 
 </html>
